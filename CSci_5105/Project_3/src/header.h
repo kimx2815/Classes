@@ -1,0 +1,9 @@
+typedef enum {
+  REGISTER=66,
+  GETLOAD,
+  UPDATELIST,
+  FIND,
+  DOWNLOAD,
+  PING,
+  REPORTPEERDOWN
+} MSGTYPE;
