@@ -13,6 +13,6 @@ CSci 5105
      Languages : C and other protocol
      
 CSci 5980
-------------
-Special topic in computer science : Introduction to Recommender Systems
-https://www.coursera.org/course/recsys
+
+     Special topic in computer science : Introduction to Recommender Systems
+     https://www.coursera.org/course/recsys
