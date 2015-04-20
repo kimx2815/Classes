@@ -22,3 +22,4 @@ CSci 8980
      CSci8980 : Parallel and Concurrent Programming: A Programming Languages Perspective
      Parallel Programming Project 
      Languages : C, Haskell, Silver
+     https://www-users.cselabs.umn.edu/classes/Fall-2013/csci8980-pcp/
