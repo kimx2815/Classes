@@ -1,0 +1,24 @@
+declaredName 'edu:umn:cs:melt:ableC:drivers:parseAndPrint'
+grammarTime 1384237937
+grammarSource "../../../edu.umn.cs.melt.ableC/drivers/parseAndPrint/"
+moduleNames ['edu:umn:cs:melt:ableC:concretesyntax', 'edu:umn:cs:melt:ableC:abstractsyntax', 'silver:langutil', 'silver:langutil:pp', 'core']
+allDeps ['edu:umn:cs:melt:ableC:abstractsyntax:gcc', 'edu:umn:cs:melt:ableC:abstractsyntax:c11', 'edu:umn:cs:melt:ableC:concretesyntax:gcc_exts', 'edu:umn:cs:melt:ableC:concretesyntax:c11', 'edu:umn:cs:melt:ableC:concretesyntax:cppTags', 'core', 'silver:langutil:pp', 'silver:langutil', 'edu:umn:cs:melt:ableC:abstractsyntax', 'edu:umn:cs:melt:ableC:concretesyntax', 'edu:umn:cs:melt:ableC:drivers:parseAndPrint']
+exportedGrammars []
+optionalGrammars []
+condBuild []
+defs [
+ fun('Driver.sv', 9, 9, [], signature('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver', [element('args', [string]), element('ioIn', foreigntype('core:IO', [])), element('theParser', fun([string, string], nt('core:ParseResult', [nt('edu:umn:cs:melt:ableC:concretesyntax:Root', [])])))], element('__func__lhs', nt('core:IOVal', [int])), []))]
+syntax []
+parsers []
+flow [local('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver', 'edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:fileName', '', []),
+ local('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver', 'edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:splitFileName', 'core:Pair', [localEqV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:fileName')]),
+ local('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver', 'edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:baseFileName', '', [localV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:splitFileName', 'core:fst'), localEqV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:splitFileName')]),
+ local('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver', 'edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:cppFileName', '', [localEqV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:baseFileName')]),
+ local('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver', 'edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:ppFileName', '', [localEqV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:baseFileName')]),
+ local('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver', 'edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:isF', 'core:IOVal', [localEqV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:fileName')]),
+ local('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver', 'edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:mkCppFile', 'core:IOVal', [localEqV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:fileName'), localEqV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:cppFileName'), localV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:isF', 'core:io'), localEqV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:isF')]),
+ local('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver', 'edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:text', 'core:IOVal', [localEqV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:cppFileName'), localV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:mkCppFile', 'core:io'), localEqV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:mkCppFile')]),
+ local('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver', 'edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:result', 'core:ParseResult', [localV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:text', 'core:iovalue'), localEqV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:text'), localEqV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:cppFileName')]),
+ anon('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver', '__decorate3136:line30', 'edu:umn:cs:melt:ableC:concretesyntax:Root', 'Driver.sv', 30, 26, [localV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:result', 'core:parseTree'), localEqV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:result')]),
+ local('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver', 'edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:ast', 'edu:umn:cs:melt:ableC:abstractsyntax:Root', [anonV('__decorate3136:line30', 'silver:langutil:ast'), anonEqV('__decorate3136:line30')]),
+ local('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver', 'edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:writePP', '', [localEqV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:ppFileName'), localV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:ast', 'silver:langutil:pp'), localEqV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:ast'), localV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:text', 'core:io'), localEqV('edu:umn:cs:melt:ableC:drivers:parseAndPrint:driver:local:text')])]

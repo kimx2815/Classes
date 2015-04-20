@@ -1,0 +1,72 @@
+declaredName 'edu:umn:cs:melt:ableC:abstractsyntax:c11'
+grammarTime 1384237937
+grammarSource "../../../edu.umn.cs.melt.ableC/abstractsyntax/c11/"
+moduleNames ['silver:langutil', 'silver:langutil:pp', 'edu:umn:cs:melt:ableC:abstractsyntax', 'edu:umn:cs:melt:ableC:abstractsyntax:env', 'core']
+allDeps ['edu:umn:cs:melt:ableC:abstractsyntax:gcc', 'core', 'edu:umn:cs:melt:ableC:abstractsyntax:env', 'edu:umn:cs:melt:ableC:abstractsyntax', 'silver:langutil:pp', 'silver:langutil', 'edu:umn:cs:melt:ableC:abstractsyntax:c11']
+exportedGrammars []
+optionalGrammars []
+condBuild []
+defs [
+ prod('C11.sv', 8, 20, [], signature('edu:umn:cs:melt:ableC:abstractsyntax:c11:noreturnQualifier', [], element('top', nt('edu:umn:cs:melt:ableC:abstractsyntax:SpecialSpecifier', [])), [])),
+ prod('C11.sv', 15, 20, [], signature('edu:umn:cs:melt:ableC:abstractsyntax:c11:genericSelectionExpr', [element('e', nt('edu:umn:cs:melt:ableC:abstractsyntax:Expr', [])), element('gl', nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssocs', [])), element('def', nt('edu:umn:cs:melt:ableC:abstractsyntax:MaybeExpr', []))], element('top', nt('edu:umn:cs:melt:ableC:abstractsyntax:Expr', [])), [element('core:location', nt('core:Location', []))])),
+ nt('C11.sv', 29, 12, 'edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssocs', [], nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssocs', []), f),
+ @('C11.sv', 29, 31, 'edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssocs', 'edu:umn:cs:melt:ableC:abstractsyntax:pps', [], nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssocs', []), [nt('silver:langutil:pp:Document', [])]),
+ @('C11.sv', 29, 36, 'edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssocs', 'silver:langutil:errors', [], nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssocs', []), [nt('silver:langutil:Message', [])]),
+ @('C11.sv', 29, 44, 'edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssocs', 'edu:umn:cs:melt:ableC:abstractsyntax:env:defs', [], nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssocs', []), [nt('edu:umn:cs:melt:ableC:abstractsyntax:env:Def', [])]),
+ @('C11.sv', 29, 50, 'edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssocs', 'edu:umn:cs:melt:ableC:abstractsyntax:env:env', [], nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssocs', []), decorated(nt('edu:umn:cs:melt:ableC:abstractsyntax:env:Env', []))),
+ prod('C11.sv', 31, 20, [], signature('edu:umn:cs:melt:ableC:abstractsyntax:c11:consGenericAssoc', [element('h', nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssoc', [])), element('t', nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssocs', []))], element('top', nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssocs', [])), [])),
+ prod('C11.sv', 38, 20, [], signature('edu:umn:cs:melt:ableC:abstractsyntax:c11:nilGenericAssoc', [], element('top', nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssocs', [])), [])),
+ nt('C11.sv', 46, 12, 'edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssoc', [], nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssoc', []), f),
+ anno@('C11.sv', 46, 30, 'edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssoc', 'core:location', [], nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssoc', []), nt('core:Location', [])),
+ @('C11.sv', 46, 40, 'edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssoc', 'silver:langutil:pp', [], nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssoc', []), nt('silver:langutil:pp:Document', [])),
+ @('C11.sv', 46, 44, 'edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssoc', 'silver:langutil:errors', [], nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssoc', []), [nt('silver:langutil:Message', [])]),
+ @('C11.sv', 46, 52, 'edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssoc', 'edu:umn:cs:melt:ableC:abstractsyntax:env:defs', [], nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssoc', []), [nt('edu:umn:cs:melt:ableC:abstractsyntax:env:Def', [])]),
+ @('C11.sv', 46, 58, 'edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssoc', 'edu:umn:cs:melt:ableC:abstractsyntax:env:env', [], nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssoc', []), decorated(nt('edu:umn:cs:melt:ableC:abstractsyntax:env:Env', []))),
+ prod('C11.sv', 48, 20, [], signature('edu:umn:cs:melt:ableC:abstractsyntax:c11:genericAssoc', [element('ty', nt('edu:umn:cs:melt:ableC:abstractsyntax:TypeName', [])), element('fun', nt('edu:umn:cs:melt:ableC:abstractsyntax:Expr', []))], element('top', nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssoc', [])), [element('core:location', nt('core:Location', []))])),
+ prod('C11.sv', 58, 20, [], signature('edu:umn:cs:melt:ableC:abstractsyntax:c11:alignasSpecifier', [element('e', nt('edu:umn:cs:melt:ableC:abstractsyntax:Expr', []))], element('top', nt('edu:umn:cs:melt:ableC:abstractsyntax:SpecialSpecifier', [])), [])),
+ prod('C11.sv', 66, 20, [], signature('edu:umn:cs:melt:ableC:abstractsyntax:c11:alignofOp', [], element('top', nt('edu:umn:cs:melt:ableC:abstractsyntax:UnaryTypeOp', [])), [element('core:location', nt('core:Location', []))])),
+ prod('C11.sv', 73, 20, [], signature('edu:umn:cs:melt:ableC:abstractsyntax:c11:atomicTypeExpr', [element('q', [nt('edu:umn:cs:melt:ableC:abstractsyntax:Qualifier', [])]), element('wrapped', nt('edu:umn:cs:melt:ableC:abstractsyntax:TypeName', []))], element('top', nt('edu:umn:cs:melt:ableC:abstractsyntax:BaseTypeExpr', [])), [])),
+ prod('C11.sv', 83, 20, [], signature('edu:umn:cs:melt:ableC:abstractsyntax:c11:atomicType', [element('q', [nt('edu:umn:cs:melt:ableC:abstractsyntax:Qualifier', [])]), element('bt', nt('edu:umn:cs:melt:ableC:abstractsyntax:Type', []))], element('top', nt('edu:umn:cs:melt:ableC:abstractsyntax:Type', [])), [])),
+ prod('C11.sv', 92, 20, [], signature('edu:umn:cs:melt:ableC:abstractsyntax:c11:threadLocalStorageClass', [], element('top', nt('edu:umn:cs:melt:ableC:abstractsyntax:StorageClass', [])), [])),
+ prod('C11.sv', 100, 20, [], signature('edu:umn:cs:melt:ableC:abstractsyntax:c11:staticAssertDecl', [element('e', nt('edu:umn:cs:melt:ableC:abstractsyntax:Expr', [])), element('s', string)], element('top', nt('edu:umn:cs:melt:ableC:abstractsyntax:Decl', [])), []))]
+syntax [nt([], nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssocs', [])),
+ nt([], nt('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssoc', []))]
+parsers []
+flow [syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:noreturnQualifier', 'silver:langutil:pp', [], t),
+ prod('edu:umn:cs:melt:ableC:abstractsyntax:SpecialSpecifier', 'edu:umn:cs:melt:ableC:abstractsyntax:c11:noreturnQualifier'),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:genericSelectionExpr', 'silver:langutil:pp', [rhsV('e', 'silver:langutil:pp'), rhsV('gl', 'edu:umn:cs:melt:ableC:abstractsyntax:pps'), rhsV('def', 'core:isJust'), rhsV('def', 'silver:langutil:pp')], t),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:genericSelectionExpr', 'silver:langutil:errors', [rhsV('e', 'silver:langutil:errors'), rhsV('gl', 'silver:langutil:errors'), rhsV('def', 'silver:langutil:errors')], t),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:genericSelectionExpr', 'edu:umn:cs:melt:ableC:abstractsyntax:env:defs', [rhsV('e', 'edu:umn:cs:melt:ableC:abstractsyntax:env:defs'), rhsV('gl', 'edu:umn:cs:melt:ableC:abstractsyntax:env:defs'), rhsV('def', 'edu:umn:cs:melt:ableC:abstractsyntax:env:defs')], t),
+ prod('edu:umn:cs:melt:ableC:abstractsyntax:Expr', 'edu:umn:cs:melt:ableC:abstractsyntax:c11:genericSelectionExpr'),
+ ntRefFlowDef('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssocs', ['edu:umn:cs:melt:ableC:abstractsyntax:env:env']),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:consGenericAssoc', 'edu:umn:cs:melt:ableC:abstractsyntax:pps', [rhsV('h', 'silver:langutil:pp'), rhsV('t', 'edu:umn:cs:melt:ableC:abstractsyntax:pps')], t),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:consGenericAssoc', 'silver:langutil:errors', [rhsV('h', 'silver:langutil:errors'), rhsV('t', 'silver:langutil:errors')], t),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:consGenericAssoc', 'edu:umn:cs:melt:ableC:abstractsyntax:env:defs', [rhsV('h', 'edu:umn:cs:melt:ableC:abstractsyntax:env:defs'), rhsV('t', 'edu:umn:cs:melt:ableC:abstractsyntax:env:defs')], t),
+ prod('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssocs', 'edu:umn:cs:melt:ableC:abstractsyntax:c11:consGenericAssoc'),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:nilGenericAssoc', 'edu:umn:cs:melt:ableC:abstractsyntax:pps', [], t),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:nilGenericAssoc', 'silver:langutil:errors', [], t),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:nilGenericAssoc', 'edu:umn:cs:melt:ableC:abstractsyntax:env:defs', [], t),
+ prod('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssocs', 'edu:umn:cs:melt:ableC:abstractsyntax:c11:nilGenericAssoc'),
+ ntRefFlowDef('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssoc', ['edu:umn:cs:melt:ableC:abstractsyntax:env:env']),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:genericAssoc', 'silver:langutil:pp', [rhsV('ty', 'silver:langutil:pp'), rhsV('fun', 'silver:langutil:pp')], t),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:genericAssoc', 'silver:langutil:errors', [rhsV('ty', 'silver:langutil:errors'), rhsV('fun', 'silver:langutil:errors')], t),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:genericAssoc', 'edu:umn:cs:melt:ableC:abstractsyntax:env:defs', [rhsV('ty', 'edu:umn:cs:melt:ableC:abstractsyntax:env:defs'), rhsV('fun', 'edu:umn:cs:melt:ableC:abstractsyntax:env:defs')], t),
+ prod('edu:umn:cs:melt:ableC:abstractsyntax:c11:GenericAssoc', 'edu:umn:cs:melt:ableC:abstractsyntax:c11:genericAssoc'),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:alignasSpecifier', 'silver:langutil:pp', [rhsV('e', 'silver:langutil:pp')], t),
+ prod('edu:umn:cs:melt:ableC:abstractsyntax:SpecialSpecifier', 'edu:umn:cs:melt:ableC:abstractsyntax:c11:alignasSpecifier'),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:alignofOp', 'silver:langutil:pp', [], t),
+ prod('edu:umn:cs:melt:ableC:abstractsyntax:UnaryTypeOp', 'edu:umn:cs:melt:ableC:abstractsyntax:c11:alignofOp'),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:atomicTypeExpr', 'edu:umn:cs:melt:ableC:abstractsyntax:typerep', [rhsV('wrapped', 'edu:umn:cs:melt:ableC:abstractsyntax:typerep')], t),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:atomicTypeExpr', 'silver:langutil:pp', [rhsV('wrapped', 'silver:langutil:pp')], t),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:atomicTypeExpr', 'silver:langutil:errors', [rhsV('wrapped', 'silver:langutil:errors')], t),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:atomicTypeExpr', 'edu:umn:cs:melt:ableC:abstractsyntax:env:defs', [rhsV('wrapped', 'edu:umn:cs:melt:ableC:abstractsyntax:env:defs')], t),
+ prod('edu:umn:cs:melt:ableC:abstractsyntax:BaseTypeExpr', 'edu:umn:cs:melt:ableC:abstractsyntax:c11:atomicTypeExpr'),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:atomicType', 'edu:umn:cs:melt:ableC:abstractsyntax:lpp', [rhsV('bt', 'edu:umn:cs:melt:ableC:abstractsyntax:lpp'), rhsV('bt', 'edu:umn:cs:melt:ableC:abstractsyntax:rpp')], t),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:atomicType', 'edu:umn:cs:melt:ableC:abstractsyntax:rpp', [], t),
+ prod('edu:umn:cs:melt:ableC:abstractsyntax:Type', 'edu:umn:cs:melt:ableC:abstractsyntax:c11:atomicType'),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:threadLocalStorageClass', 'silver:langutil:pp', [], t),
+ prod('edu:umn:cs:melt:ableC:abstractsyntax:StorageClass', 'edu:umn:cs:melt:ableC:abstractsyntax:c11:threadLocalStorageClass'),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:staticAssertDecl', 'silver:langutil:pp', [rhsV('e', 'silver:langutil:pp')], t),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:staticAssertDecl', 'silver:langutil:errors', [rhsV('e', 'silver:langutil:errors')], t),
+ syn('edu:umn:cs:melt:ableC:abstractsyntax:c11:staticAssertDecl', 'edu:umn:cs:melt:ableC:abstractsyntax:env:defs', [rhsV('e', 'edu:umn:cs:melt:ableC:abstractsyntax:env:defs')], t),
+ prod('edu:umn:cs:melt:ableC:abstractsyntax:Decl', 'edu:umn:cs:melt:ableC:abstractsyntax:c11:staticAssertDecl')]

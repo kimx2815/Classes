@@ -1,0 +1,25 @@
+declaredName 'lambda_calculus:artifacts:host'
+grammarTime 1381301840
+grammarSource "../../../lambda_calculus/artifacts/host/"
+moduleNames ['lambda_calculus:host:abstractsyntax', 'lambda_calculus:host:concretesyntax', 'core']
+allDeps ['core', 'lambda_calculus:host:concretesyntax', 'lambda_calculus:host:abstractsyntax', 'lambda_calculus:artifacts:host']
+exportedGrammars []
+optionalGrammars []
+condBuild []
+defs [
+ fun('Main.sv', 6, 7, [], signature('lambda_calculus:artifacts:host:the_parser', [element('stringToParse', string), element('filenameToReport', string)], element('__func__lhs', nt('core:ParseResult', [nt('lambda_calculus:host:concretesyntax:Root', [])])), [])),
+ fun('Main.sv', 10, 9, [], signature('lambda_calculus:artifacts:host:main', [element('args', [string]), element('io_in', foreigntype('core:IO', []))], element('__func__lhs', nt('core:IOVal', [int])), [])),
+ p@('Main.sv', 10, 9, [], signature('lambda_calculus:artifacts:host:main', [element('args', [string]), element('io_in', foreigntype('core:IO', []))], element('__func__lhs', nt('core:IOVal', [int])), []), [
+ loc('Main.sv', 15, 23, 'lambda_calculus:artifacts:host:main:local:isF', nt('core:IOVal', [bool])),
+ loc('Main.sv', 18, 23, 'lambda_calculus:artifacts:host:main:local:text', nt('core:IOVal', [string]))])]
+syntax []
+parsers [parser('Main.sv', 6, 0,'lambda_calculus:artifacts:host','lambda_calculus:artifacts:host:the_parser','lambda_calculus:host:concretesyntax:Root',['lambda_calculus:host:concretesyntax'])]
+flow [local('lambda_calculus:artifacts:host:main', 'lambda_calculus:artifacts:host:main:local:filename', '', []),
+ local('lambda_calculus:artifacts:host:main', 'lambda_calculus:artifacts:host:main:local:isF', 'core:IOVal', [localEqV('lambda_calculus:artifacts:host:main:local:filename')]),
+ local('lambda_calculus:artifacts:host:main', 'lambda_calculus:artifacts:host:main:local:text', 'core:IOVal', [localEqV('lambda_calculus:artifacts:host:main:local:filename'), localV('lambda_calculus:artifacts:host:main:local:isF', 'core:io'), localEqV('lambda_calculus:artifacts:host:main:local:isF')]),
+ local('lambda_calculus:artifacts:host:main', 'lambda_calculus:artifacts:host:main:local:result', 'core:ParseResult', [localV('lambda_calculus:artifacts:host:main:local:text', 'core:iovalue'), localEqV('lambda_calculus:artifacts:host:main:local:text'), localEqV('lambda_calculus:artifacts:host:main:local:filename')]),
+ local('lambda_calculus:artifacts:host:main', 'lambda_calculus:artifacts:host:main:local:r_cst', 'lambda_calculus:host:concretesyntax:Root', [localV('lambda_calculus:artifacts:host:main:local:result', 'core:parseTree'), localEqV('lambda_calculus:artifacts:host:main:local:result')]),
+ local('lambda_calculus:artifacts:host:main', 'lambda_calculus:artifacts:host:main:local:r_ast', 'lambda_calculus:host:abstractsyntax:Root', [localV('lambda_calculus:artifacts:host:main:local:r_cst', 'lambda_calculus:host:concretesyntax:ast_Root'), localEqV('lambda_calculus:artifacts:host:main:local:r_cst')]),
+ local('lambda_calculus:artifacts:host:main', 'lambda_calculus:artifacts:host:main:local:pp_msg', '', [localV('lambda_calculus:artifacts:host:main:local:r_cst', 'lambda_calculus:host:concretesyntax:pp'), localEqV('lambda_calculus:artifacts:host:main:local:r_cst'), localV('lambda_calculus:artifacts:host:main:local:r_ast', 'lambda_calculus:host:abstractsyntax:pp'), localEqV('lambda_calculus:artifacts:host:main:local:r_ast'), localV('lambda_calculus:artifacts:host:main:local:text', 'core:io'), localEqV('lambda_calculus:artifacts:host:main:local:text')]),
+ local('lambda_calculus:artifacts:host:main', 'lambda_calculus:artifacts:host:main:local:errors_msg', '', [localV('lambda_calculus:artifacts:host:main:local:r_ast', 'lambda_calculus:host:abstractsyntax:errors'), localEqV('lambda_calculus:artifacts:host:main:local:r_ast'), localEqV('lambda_calculus:artifacts:host:main:local:pp_msg'), localV('lambda_calculus:artifacts:host:main:local:r_ast', 'lambda_calculus:host:abstractsyntax:errors'), localEqV('lambda_calculus:artifacts:host:main:local:r_ast'), localEqV('lambda_calculus:artifacts:host:main:local:pp_msg')]),
+ local('lambda_calculus:artifacts:host:main', 'lambda_calculus:artifacts:host:main:local:writeHaskell', '', [localV('lambda_calculus:artifacts:host:main:local:r_ast', 'lambda_calculus:host:abstractsyntax:errors'), localEqV('lambda_calculus:artifacts:host:main:local:r_ast'), localV('lambda_calculus:artifacts:host:main:local:r_ast', 'lambda_calculus:host:abstractsyntax:haskell'), localEqV('lambda_calculus:artifacts:host:main:local:r_ast'), localEqV('lambda_calculus:artifacts:host:main:local:errors_msg'), localEqV('lambda_calculus:artifacts:host:main:local:errors_msg')])]

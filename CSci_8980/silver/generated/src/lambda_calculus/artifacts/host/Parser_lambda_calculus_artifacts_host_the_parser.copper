@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CopperSpec xmlns="http://melt.cs.umn.edu/copper/xmlns">
+  <Parser id="lambda_calculus_artifacts_host_the_parser" isUnitary="true">
+    <PP>lambda_calculus:artifacts:host:the_parser</PP>
+    <Grammars><GrammarRef id="host"/></Grammars>
+    <StartSymbol><NonterminalRef id="lambda_calculus_host_concretesyntax_Root" grammar="host" /></StartSymbol>
+    <StartLayout><TerminalRef id="lambda_calculus_host_concretesyntax_LineComment_t" grammar="host" /><TerminalRef id="lambda_calculus_host_concretesyntax_WS_t" grammar="host" /></StartLayout>
+  </Parser>
+
+  <Grammar id="host">
+
+    <PP>host</PP>
+
+    <Layout><TerminalRef id="lambda_calculus_host_concretesyntax_LineComment_t" grammar="host" /><TerminalRef id="lambda_calculus_host_concretesyntax_WS_t" grammar="host" /></Layout>
+
+    <Declarations>
+      <ParserAttribute id="context">
+        <Type><![CDATA[common.DecoratedNode]]></Type>
+        <Code><![CDATA[context = common.TopNode.singleton;]]></Code>
+      </ParserAttribute>
+  <Terminal id="lambda_calculus_host_concretesyntax_And_t">
+    <PP>lambda_calculus:host:concretesyntax:And_t</PP>
+    <Regex><Concatenation><CharacterSet><SingleCharacter char="&amp;"/></CharacterSet><CharacterSet><SingleCharacter char="&amp;"/></CharacterSet></Concatenation></Regex>
+    <Operator>
+      <Class>main</Class>
+      <Precedence>6</Precedence>
+      <LeftAssociative/>
+    </Operator>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_Arrow_t">
+    <PP>lambda_calculus:host:concretesyntax:Arrow_t</PP>
+    <Regex><Concatenation><CharacterSet><SingleCharacter char="-"/></CharacterSet><CharacterSet><SingleCharacter char="&gt;"/></CharacterSet></Concatenation></Regex>
+    <Operator>
+      <Class>main</Class>
+      <Precedence>5</Precedence>
+      <RightAssociative/>
+    </Operator>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_Colon_t">
+    <PP>lambda_calculus:host:concretesyntax:Colon_t</PP>
+    <Regex><CharacterSet><SingleCharacter char=":"/></CharacterSet></Regex>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_Dot_t">
+    <PP>lambda_calculus:host:concretesyntax:Dot_t</PP>
+    <Regex><CharacterSet><SingleCharacter char="."/></CharacterSet></Regex>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_End_t">
+    <PP>lambda_calculus:host:concretesyntax:End_t</PP>
+    <Regex><Concatenation><CharacterSet><SingleCharacter char="e"/></CharacterSet><CharacterSet><SingleCharacter char="n"/></CharacterSet><CharacterSet><SingleCharacter char="d"/></CharacterSet></Concatenation></Regex>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates><TerminalRef id="lambda_calculus_host_concretesyntax_Name_t" grammar="host" /></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_Equal_t">
+    <PP>lambda_calculus:host:concretesyntax:Equal_t</PP>
+    <Regex><Concatenation><CharacterSet><SingleCharacter char="="/></CharacterSet><CharacterSet><SingleCharacter char="="/></CharacterSet></Concatenation></Regex>
+    <Operator>
+      <Class>main</Class>
+      <Precedence>7</Precedence>
+      <LeftAssociative/>
+    </Operator>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_GreaterE_t">
+    <PP>lambda_calculus:host:concretesyntax:GreaterE_t</PP>
+    <Regex><Concatenation><CharacterSet><SingleCharacter char="&gt;"/></CharacterSet><CharacterSet><SingleCharacter char="="/></CharacterSet></Concatenation></Regex>
+    <Operator>
+      <Class>main</Class>
+      <Precedence>8</Precedence>
+      <LeftAssociative/>
+    </Operator>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_Greater_t">
+    <PP>lambda_calculus:host:concretesyntax:Greater_t</PP>
+    <Regex><CharacterSet><SingleCharacter char="&gt;"/></CharacterSet></Regex>
+    <Operator>
+      <Class>main</Class>
+      <Precedence>8</Precedence>
+      <LeftAssociative/>
+    </Operator>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_IntConst_t">
+    <PP>lambda_calculus:host:concretesyntax:IntConst_t</PP>
+    <Regex><Concatenation><CharacterSet><CharacterRange lower="0" upper="9"/></CharacterSet><KleeneStar><CharacterSet><CharacterRange lower="0" upper="9"/></CharacterSet></KleeneStar></Concatenation></Regex>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_Int_t">
+    <PP>lambda_calculus:host:concretesyntax:Int_t</PP>
+    <Regex><Concatenation><CharacterSet><SingleCharacter char="i"/></CharacterSet><CharacterSet><SingleCharacter char="n"/></CharacterSet></Concatenation></Regex>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates><TerminalRef id="lambda_calculus_host_concretesyntax_Name_t" grammar="host" /></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_Integer_t">
+    <PP>lambda_calculus:host:concretesyntax:Integer_t</PP>
+    <Regex><Concatenation><CharacterSet><SingleCharacter char="I"/></CharacterSet><CharacterSet><SingleCharacter char="n"/></CharacterSet><CharacterSet><SingleCharacter char="t"/></CharacterSet><CharacterSet><SingleCharacter char="e"/></CharacterSet><CharacterSet><SingleCharacter char="g"/></CharacterSet><CharacterSet><SingleCharacter char="e"/></CharacterSet><CharacterSet><SingleCharacter char="r"/></CharacterSet></Concatenation></Regex>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates><TerminalRef id="lambda_calculus_host_concretesyntax_Name_t" grammar="host" /></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_Lambda_t">
+    <PP>lambda_calculus:host:concretesyntax:Lambda_t</PP>
+    <Regex><CharacterSet><SingleCharacter char="\"/></CharacterSet></Regex>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_LeftParen_t">
+    <PP>lambda_calculus:host:concretesyntax:LeftParen_t</PP>
+    <Regex><CharacterSet><SingleCharacter char="("/></CharacterSet></Regex>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_LessE_t">
+    <PP>lambda_calculus:host:concretesyntax:LessE_t</PP>
+    <Regex><Concatenation><CharacterSet><SingleCharacter char="&lt;"/></CharacterSet><CharacterSet><SingleCharacter char="="/></CharacterSet></Concatenation></Regex>
+    <Operator>
+      <Class>main</Class>
+      <Precedence>8</Precedence>
+      <LeftAssociative/>
+    </Operator>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_Less_t">
+    <PP>lambda_calculus:host:concretesyntax:Less_t</PP>
+    <Regex><CharacterSet><SingleCharacter char="&lt;"/></CharacterSet></Regex>
+    <Operator>
+      <Class>main</Class>
+      <Precedence>8</Precedence>
+      <LeftAssociative/>
+    </Operator>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_Let_t">
+    <PP>lambda_calculus:host:concretesyntax:Let_t</PP>
+    <Regex><Concatenation><CharacterSet><SingleCharacter char="l"/></CharacterSet><CharacterSet><SingleCharacter char="e"/></CharacterSet><CharacterSet><SingleCharacter char="t"/></CharacterSet></Concatenation></Regex>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates><TerminalRef id="lambda_calculus_host_concretesyntax_Name_t" grammar="host" /></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_LineComment_t">
+    <PP>lambda_calculus:host:concretesyntax:LineComment_t</PP>
+    <Regex><Concatenation><CharacterSet><SingleCharacter char="/"/></CharacterSet><CharacterSet><SingleCharacter char="/"/></CharacterSet><KleeneStar><CharacterSet invert="true"><SingleCharacter char="&#10;"/></CharacterSet></KleeneStar></Concatenation></Regex>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_Minus_t">
+    <PP>lambda_calculus:host:concretesyntax:Minus_t</PP>
+    <Regex><CharacterSet><SingleCharacter char="-"/></CharacterSet></Regex>
+    <Operator>
+      <Class>main</Class>
+      <Precedence>9</Precedence>
+      <LeftAssociative/>
+    </Operator>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_Name_t">
+    <PP>lambda_calculus:host:concretesyntax:Name_t</PP>
+    <Regex><Concatenation><CharacterSet><CharacterRange lower="a" upper="z"/><CharacterRange lower="A" upper="Z"/></CharacterSet><KleeneStar><CharacterSet><CharacterRange lower="a" upper="z"/><CharacterRange lower="A" upper="Z"/><CharacterRange lower="0" upper="9"/><SingleCharacter char="_"/></CharacterSet></KleeneStar></Concatenation></Regex>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_Or_t">
+    <PP>lambda_calculus:host:concretesyntax:Or_t</PP>
+    <Regex><Concatenation><CharacterSet><SingleCharacter char="|"/></CharacterSet><CharacterSet><SingleCharacter char="|"/></CharacterSet></Concatenation></Regex>
+    <Operator>
+      <Class>main</Class>
+      <Precedence>5</Precedence>
+      <LeftAssociative/>
+    </Operator>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_Plus_t">
+    <PP>lambda_calculus:host:concretesyntax:Plus_t</PP>
+    <Regex><CharacterSet><SingleCharacter char="+"/></CharacterSet></Regex>
+    <Operator>
+      <Class>main</Class>
+      <Precedence>9</Precedence>
+      <LeftAssociative/>
+    </Operator>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_RightParen_t">
+    <PP>lambda_calculus:host:concretesyntax:RightParen_t</PP>
+    <Regex><CharacterSet><SingleCharacter char=")"/></CharacterSet></Regex>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_Slash_t">
+    <PP>lambda_calculus:host:concretesyntax:Slash_t</PP>
+    <Regex><CharacterSet><SingleCharacter char="*"/></CharacterSet></Regex>
+    <Operator>
+      <Class>main</Class>
+      <Precedence>10</Precedence>
+      <LeftAssociative/>
+    </Operator>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_Star_t">
+    <PP>lambda_calculus:host:concretesyntax:Star_t</PP>
+    <Regex><CharacterSet><SingleCharacter char="/"/></CharacterSet></Regex>
+    <Operator>
+      <Class>main</Class>
+      <Precedence>10</Precedence>
+      <LeftAssociative/>
+    </Operator>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+  <Terminal id="lambda_calculus_host_concretesyntax_WS_t">
+    <PP>lambda_calculus:host:concretesyntax:WS_t</PP>
+    <Regex><Concatenation><CharacterSet><SingleCharacter char=" "/><SingleCharacter char="&#9;"/><SingleCharacter char="&#10;"/></CharacterSet><KleeneStar><CharacterSet><SingleCharacter char=" "/><SingleCharacter char="&#9;"/><SingleCharacter char="&#10;"/></CharacterSet></KleeneStar></Concatenation></Regex>
+    <Type>common.TerminalRecord</Type>
+    <Code><![CDATA[
+RESULT = new common.TerminalRecord(lexeme,virtualLocation,(int)getStartRealLocation().getPos(),(int)getEndRealLocation().getPos());
+]]></Code>
+    <InClasses></InClasses>
+    <Submits></Submits>
+    <Dominates></Dominates>
+  </Terminal>
+
+  <Nonterminal id="lambda_calculus_host_concretesyntax_ATerm">
+    <PP>lambda_calculus:host:concretesyntax:ATerm</PP>
+    <Type><![CDATA[lambda_calculus.host.concretesyntax.NATerm]]></Type>
+  </Nonterminal>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_179_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_179_0(_children[0]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_ATerm" grammar="host" /></LHS>
+    <RHS><TerminalRef id="lambda_calculus_host_concretesyntax_Name_t" grammar="host" /></RHS>
+  </Production>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_174_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_174_0(_children[0]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_ATerm" grammar="host" /></LHS>
+    <RHS><TerminalRef id="lambda_calculus_host_concretesyntax_IntConst_t" grammar="host" /></RHS>
+  </Production>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_169_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_169_0(_children[0], _children[1], _children[2]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_ATerm" grammar="host" /></LHS>
+    <RHS><TerminalRef id="lambda_calculus_host_concretesyntax_LeftParen_t" grammar="host" /><NonterminalRef id="lambda_calculus_host_concretesyntax_LamExpr" grammar="host" /><TerminalRef id="lambda_calculus_host_concretesyntax_RightParen_t" grammar="host" /></RHS>
+  </Production>
+
+  <Nonterminal id="lambda_calculus_host_concretesyntax_AppTerm">
+    <PP>lambda_calculus:host:concretesyntax:AppTerm</PP>
+    <Type><![CDATA[lambda_calculus.host.concretesyntax.NAppTerm]]></Type>
+  </Nonterminal>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_161_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_161_0(_children[0]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_AppTerm" grammar="host" /></LHS>
+    <RHS><NonterminalRef id="lambda_calculus_host_concretesyntax_ATerm" grammar="host" /></RHS>
+  </Production>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_156_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_156_0(_children[0], _children[1]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_AppTerm" grammar="host" /></LHS>
+    <RHS><NonterminalRef id="lambda_calculus_host_concretesyntax_AppTerm" grammar="host" /><NonterminalRef id="lambda_calculus_host_concretesyntax_ATerm" grammar="host" /></RHS>
+  </Production>
+
+  <Nonterminal id="lambda_calculus_host_concretesyntax_Expr">
+    <PP>lambda_calculus:host:concretesyntax:Expr</PP>
+    <Type><![CDATA[lambda_calculus.host.concretesyntax.NExpr]]></Type>
+  </Nonterminal>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_147_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_147_0(_children[0]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></LHS>
+    <RHS><NonterminalRef id="lambda_calculus_host_concretesyntax_AppTerm" grammar="host" /></RHS>
+  </Production>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_132_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_132_0(_children[0], _children[1], _children[2]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></LHS>
+    <RHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /><TerminalRef id="lambda_calculus_host_concretesyntax_Or_t" grammar="host" /><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></RHS>
+  </Production>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_126_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_126_0(_children[0], _children[1], _children[2]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></LHS>
+    <RHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /><TerminalRef id="lambda_calculus_host_concretesyntax_And_t" grammar="host" /><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></RHS>
+  </Production>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_120_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_120_0(_children[0], _children[1], _children[2]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></LHS>
+    <RHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /><TerminalRef id="lambda_calculus_host_concretesyntax_GreaterE_t" grammar="host" /><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></RHS>
+  </Production>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_114_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_114_0(_children[0], _children[1], _children[2]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></LHS>
+    <RHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /><TerminalRef id="lambda_calculus_host_concretesyntax_LessE_t" grammar="host" /><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></RHS>
+  </Production>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_109_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_109_0(_children[0], _children[1], _children[2]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></LHS>
+    <RHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /><TerminalRef id="lambda_calculus_host_concretesyntax_Equal_t" grammar="host" /><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></RHS>
+  </Production>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_104_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_104_0(_children[0], _children[1], _children[2]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></LHS>
+    <RHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /><TerminalRef id="lambda_calculus_host_concretesyntax_Less_t" grammar="host" /><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></RHS>
+  </Production>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_99_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_99_0(_children[0], _children[1], _children[2]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></LHS>
+    <RHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /><TerminalRef id="lambda_calculus_host_concretesyntax_Greater_t" grammar="host" /><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></RHS>
+  </Production>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_94_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_94_0(_children[0], _children[1], _children[2]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></LHS>
+    <RHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /><TerminalRef id="lambda_calculus_host_concretesyntax_Minus_t" grammar="host" /><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></RHS>
+  </Production>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_89_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_89_0(_children[0], _children[1], _children[2]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></LHS>
+    <RHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /><TerminalRef id="lambda_calculus_host_concretesyntax_Star_t" grammar="host" /><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></RHS>
+  </Production>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_84_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_84_0(_children[0], _children[1], _children[2]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></LHS>
+    <RHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /><TerminalRef id="lambda_calculus_host_concretesyntax_Slash_t" grammar="host" /><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></RHS>
+  </Production>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_79_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_79_0(_children[0], _children[1], _children[2]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></LHS>
+    <RHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /><TerminalRef id="lambda_calculus_host_concretesyntax_Plus_t" grammar="host" /><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></RHS>
+  </Production>
+
+  <Nonterminal id="lambda_calculus_host_concretesyntax_LamExpr">
+    <PP>lambda_calculus:host:concretesyntax:LamExpr</PP>
+    <Type><![CDATA[lambda_calculus.host.concretesyntax.NLamExpr]]></Type>
+  </Nonterminal>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_70_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_70_0(_children[0]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_LamExpr" grammar="host" /></LHS>
+    <RHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Expr" grammar="host" /></RHS>
+  </Production>
+  <Production id="lambda_calculus_host_concretesyntax_P_lambda_calculus_host_concretesyntaxSyntax_sv_65_0">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PP_lambda_calculus_host_concretesyntaxSyntax_sv_65_0(_children[0], _children[1], _children[2], _children[3], _children[4], _children[5]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_LamExpr" grammar="host" /></LHS>
+    <RHS><TerminalRef id="lambda_calculus_host_concretesyntax_Lambda_t" grammar="host" /><TerminalRef id="lambda_calculus_host_concretesyntax_Name_t" grammar="host" /><TerminalRef id="lambda_calculus_host_concretesyntax_Colon_t" grammar="host" /><NonterminalRef id="lambda_calculus_host_concretesyntax_Type" grammar="host" /><TerminalRef id="lambda_calculus_host_concretesyntax_Dot_t" grammar="host" /><NonterminalRef id="lambda_calculus_host_concretesyntax_LamExpr" grammar="host" /></RHS>
+  </Production>
+
+  <Nonterminal id="lambda_calculus_host_concretesyntax_Root">
+    <PP>lambda_calculus:host:concretesyntax:Root</PP>
+    <Type><![CDATA[lambda_calculus.host.concretesyntax.NRoot]]></Type>
+  </Nonterminal>
+  <Production id="lambda_calculus_host_concretesyntax_root">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.Proot(_children[0]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Root" grammar="host" /></LHS>
+    <RHS><NonterminalRef id="lambda_calculus_host_concretesyntax_LamExpr" grammar="host" /></RHS>
+  </Production>
+
+  <Nonterminal id="lambda_calculus_host_concretesyntax_Type">
+    <PP>lambda_calculus:host:concretesyntax:Type</PP>
+    <Type><![CDATA[lambda_calculus.host.concretesyntax.NType]]></Type>
+  </Nonterminal>
+  <Production id="lambda_calculus_host_concretesyntax_integerType">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PintegerType(_children[0]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Type" grammar="host" /></LHS>
+    <RHS><TerminalRef id="lambda_calculus_host_concretesyntax_Integer_t" grammar="host" /></RHS>
+  </Production>
+  <Production id="lambda_calculus_host_concretesyntax_functionType">
+    <Code><![CDATA[
+RESULT = new lambda_calculus.host.concretesyntax.PfunctionType(_children[0], _children[1], _children[2]);
+]]></Code>
+    <LHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Type" grammar="host" /></LHS>
+    <RHS><NonterminalRef id="lambda_calculus_host_concretesyntax_Type" grammar="host" /><TerminalRef id="lambda_calculus_host_concretesyntax_Arrow_t" grammar="host" /><NonterminalRef id="lambda_calculus_host_concretesyntax_Type" grammar="host" /></RHS>
+  </Production>
+    </Declarations>
+  </Grammar>
+</CopperSpec>

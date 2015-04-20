@@ -1,0 +1,41 @@
+declaredName 'silver:langutil'
+grammarTime 1380132730
+grammarSource "/Users/hoonkim/8980/silver/grammars/silver/langutil/"
+moduleNames ['silver:langutil:pp', 'core']
+allDeps ['core', 'silver:langutil:pp', 'silver:langutil']
+exportedGrammars []
+optionalGrammars []
+condBuild []
+defs [
+ nt('Message.sv', 7, 12, 'silver:langutil:Message', [], nt('silver:langutil:Message', []), f),
+ @('Message.sv', 7, 25, 'silver:langutil:Message', 'silver:langutil:message', [], nt('silver:langutil:Message', []), string),
+ @('Message.sv', 7, 34, 'silver:langutil:Message', 'silver:langutil:where', [], nt('silver:langutil:Message', []), nt('core:Location', [])),
+ @('Message.sv', 7, 41, 'silver:langutil:Message', 'silver:langutil:output', [], nt('silver:langutil:Message', []), string),
+ @('Message.sv', 7, 49, 'silver:langutil:Message', 'silver:langutil:severity', [], nt('silver:langutil:Message', []), int),
+ syn('Message.sv', 12, 22, 'silver:langutil:where', [], nt('core:Location', [])),
+ syn('Message.sv', 16, 22, 'silver:langutil:message', [], string),
+ syn('Message.sv', 20, 22, 'silver:langutil:output', [], string),
+ syn('Message.sv', 25, 22, 'silver:langutil:severity', [], int),
+ prod('Message.sv', 31, 20, [], signature('silver:langutil:err', [element('l', nt('core:Location', [])), element('m', string)], element('top', nt('silver:langutil:Message', [])), [])),
+ prod('Message.sv', 44, 20, [], signature('silver:langutil:wrn', [element('l', nt('core:Location', [])), element('m', string)], element('top', nt('silver:langutil:Message', [])), [])),
+ fun('Message.sv', 62, 9, [], signature('silver:langutil:containsErrors', [element('l', [nt('silver:langutil:Message', [])]), element('wError', bool)], element('__func__lhs', bool), [])),
+ fun('Message.sv', 76, 9, [], signature('silver:langutil:messagesToString', [element('msgs', [nt('silver:langutil:Message', [])])], element('__func__lhs', string), [])),
+ fun('Message.sv', 83, 9, [], signature('silver:langutil:messageLte', [element('m1', nt('silver:langutil:Message', [])), element('m2', nt('silver:langutil:Message', []))], element('__func__lhs', bool), [])),
+ syn('Attributes.sv', 11, 22, 'silver:langutil:unparse', [], string),
+ syn('Attributes.sv', 16, 22, 'silver:langutil:pp', [], nt('silver:langutil:pp:Document', [])),
+ syn('Attributes.sv', 21, 22, 'silver:langutil:ast', [a], a),
+ syncol('Attributes.sv', 26, 22, 'silver:langutil:errors', [], [nt('silver:langutil:Message', [])], ++list)]
+syntax [nt([], nt('silver:langutil:Message', []))]
+parsers []
+flow [ntRefFlowDef('silver:langutil:Message', []),
+ syn('silver:langutil:err', 'silver:langutil:where', [], t),
+ syn('silver:langutil:err', 'silver:langutil:message', [], t),
+ syn('silver:langutil:err', 'silver:langutil:output', [rhsV('l', 'core:filename'), rhsV('l', 'core:line'), rhsV('l', 'core:column')], t),
+ syn('silver:langutil:err', 'silver:langutil:severity', [], t),
+ prod('silver:langutil:Message', 'silver:langutil:err'),
+ syn('silver:langutil:wrn', 'silver:langutil:where', [], t),
+ syn('silver:langutil:wrn', 'silver:langutil:message', [], t),
+ syn('silver:langutil:wrn', 'silver:langutil:output', [rhsV('l', 'core:filename'), rhsV('l', 'core:line'), rhsV('l', 'core:column')], t),
+ syn('silver:langutil:wrn', 'silver:langutil:severity', [], t),
+ prod('silver:langutil:Message', 'silver:langutil:wrn'),
+ anon('silver:langutil:containsErrors', '__decorate1575:line67', 'silver:langutil:Message', 'Message.sv', 67, 11, [])]

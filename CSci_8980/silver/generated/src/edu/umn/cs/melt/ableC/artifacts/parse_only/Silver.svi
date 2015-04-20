@@ -1,0 +1,14 @@
+declaredName 'edu:umn:cs:melt:ableC:artifacts:parse_only'
+grammarTime 1384343183
+grammarSource "../../../edu.umn.cs.melt.ableC/artifacts/parse_only/"
+moduleNames ['edu:umn:cs:melt:ableC:drivers:parseOnly', 'edu:umn:cs:melt:ableC:concretesyntax', 'core']
+allDeps ['edu:umn:cs:melt:ableC:concretesyntax:gcc_exts', 'edu:umn:cs:melt:ableC:concretesyntax:c11', 'edu:umn:cs:melt:ableC:concretesyntax:cppTags', 'core', 'edu:umn:cs:melt:ableC:concretesyntax', 'edu:umn:cs:melt:ableC:drivers:parseOnly', 'edu:umn:cs:melt:ableC:artifacts:parse_only']
+exportedGrammars []
+optionalGrammars []
+condBuild []
+defs [
+ fun('Main.sv', 7, 7, [], signature('edu:umn:cs:melt:ableC:artifacts:parse_only:theParser', [element('stringToParse', string), element('filenameToReport', string)], element('__func__lhs', nt('core:ParseResult', [nt('edu:umn:cs:melt:ableC:concretesyntax:Root', [])])), [])),
+ fun('Main.sv', 11, 9, [], signature('edu:umn:cs:melt:ableC:artifacts:parse_only:main', [element('args', [string]), element('io_in', foreigntype('core:IO', []))], element('__func__lhs', nt('core:IOVal', [int])), []))]
+syntax []
+parsers [parser('Main.sv', 7, 0,'edu:umn:cs:melt:ableC:artifacts:parse_only','edu:umn:cs:melt:ableC:artifacts:parse_only:theParser','edu:umn:cs:melt:ableC:concretesyntax:Root',['edu:umn:cs:melt:ableC:concretesyntax'])]
+flow []

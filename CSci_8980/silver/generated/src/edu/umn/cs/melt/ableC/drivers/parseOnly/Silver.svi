@@ -1,0 +1,20 @@
+declaredName 'edu:umn:cs:melt:ableC:drivers:parseOnly'
+grammarTime 1381343643
+grammarSource "../../../edu.umn.cs.melt.ableC/drivers/parseOnly/"
+moduleNames ['edu:umn:cs:melt:ableC:concretesyntax', 'core']
+allDeps ['edu:umn:cs:melt:ableC:concretesyntax:gcc_exts', 'edu:umn:cs:melt:ableC:concretesyntax:c11', 'edu:umn:cs:melt:ableC:concretesyntax:cppTags', 'core', 'edu:umn:cs:melt:ableC:concretesyntax', 'edu:umn:cs:melt:ableC:drivers:parseOnly']
+exportedGrammars []
+optionalGrammars []
+condBuild []
+defs [
+ fun('Driver.sv', 5, 9, [], signature('edu:umn:cs:melt:ableC:drivers:parseOnly:driver', [element('args', [string]), element('io_in', foreigntype('core:IO', [])), element('the_parser', fun([string, string], nt('core:ParseResult', [nt('edu:umn:cs:melt:ableC:concretesyntax:Root', [])])))], element('__func__lhs', nt('core:IOVal', [int])), [])),
+ p@('Driver.sv', 5, 9, [], signature('edu:umn:cs:melt:ableC:drivers:parseOnly:driver', [element('args', [string]), element('io_in', foreigntype('core:IO', [])), element('the_parser', fun([string, string], nt('core:ParseResult', [nt('edu:umn:cs:melt:ableC:concretesyntax:Root', [])])))], element('__func__lhs', nt('core:IOVal', [int])), []), [
+ loc('Driver.sv', 11, 23, 'edu:umn:cs:melt:ableC:drivers:parseOnly:driver:local:isF', nt('core:IOVal', [bool])),
+ loc('Driver.sv', 14, 23, 'edu:umn:cs:melt:ableC:drivers:parseOnly:driver:local:text', nt('core:IOVal', [string]))])]
+syntax []
+parsers []
+flow [local('edu:umn:cs:melt:ableC:drivers:parseOnly:driver', 'edu:umn:cs:melt:ableC:drivers:parseOnly:driver:local:fileName', '', []),
+ local('edu:umn:cs:melt:ableC:drivers:parseOnly:driver', 'edu:umn:cs:melt:ableC:drivers:parseOnly:driver:local:isF', 'core:IOVal', [localEqV('edu:umn:cs:melt:ableC:drivers:parseOnly:driver:local:fileName')]),
+ local('edu:umn:cs:melt:ableC:drivers:parseOnly:driver', 'edu:umn:cs:melt:ableC:drivers:parseOnly:driver:local:text', 'core:IOVal', [localEqV('edu:umn:cs:melt:ableC:drivers:parseOnly:driver:local:fileName'), localV('edu:umn:cs:melt:ableC:drivers:parseOnly:driver:local:isF', 'core:io'), localEqV('edu:umn:cs:melt:ableC:drivers:parseOnly:driver:local:isF')]),
+ local('edu:umn:cs:melt:ableC:drivers:parseOnly:driver', 'edu:umn:cs:melt:ableC:drivers:parseOnly:driver:local:result', 'core:ParseResult', [localV('edu:umn:cs:melt:ableC:drivers:parseOnly:driver:local:text', 'core:iovalue'), localEqV('edu:umn:cs:melt:ableC:drivers:parseOnly:driver:local:text'), localEqV('edu:umn:cs:melt:ableC:drivers:parseOnly:driver:local:fileName')]),
+ local('edu:umn:cs:melt:ableC:drivers:parseOnly:driver', 'edu:umn:cs:melt:ableC:drivers:parseOnly:driver:local:r_cst', 'edu:umn:cs:melt:ableC:concretesyntax:Root', [localV('edu:umn:cs:melt:ableC:drivers:parseOnly:driver:local:result', 'core:parseTree'), localEqV('edu:umn:cs:melt:ableC:drivers:parseOnly:driver:local:result')])]

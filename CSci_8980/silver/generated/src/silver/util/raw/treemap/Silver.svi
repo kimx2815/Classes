@@ -1,0 +1,18 @@
+declaredName 'silver:util:raw:treemap'
+grammarTime 1380132730
+grammarSource "/Users/hoonkim/8980/silver/grammars/silver/util/raw/treemap/"
+moduleNames ['core']
+allDeps ['core', 'silver:util:raw:treemap']
+exportedGrammars []
+optionalGrammars []
+condBuild []
+defs [
+ type('TreeMap.sv', 6, 5, 'silver:util:raw:treemap:Map', [a, b], foreigntype('silver:util:raw:treemap:Map', [a, b])),
+ fun('TreeMap.sv', 11, 9, [a, b], signature('silver:util:raw:treemap:empty', [element('comparator', fun([a, a], int))], element('__func__lhs', foreigntype('silver:util:raw:treemap:Map', [a, b])), [])),
+ fun('TreeMap.sv', 24, 9, [a, b], signature('silver:util:raw:treemap:add', [element('lst', [nt('core:Pair', [a, b])]), element('mp', foreigntype('silver:util:raw:treemap:Map', [a, b]))], element('__func__lhs', foreigntype('silver:util:raw:treemap:Map', [a, b])), [])),
+ fun('TreeMap.sv', 35, 9, [a, b], signature('silver:util:raw:treemap:lookup', [element('key', b), element('mp', foreigntype('silver:util:raw:treemap:Map', [b, a]))], element('__func__lhs', [a]), [])),
+ fun('TreeMap.sv', 46, 9, [a, b], signature('silver:util:raw:treemap:toList', [element('mp', foreigntype('silver:util:raw:treemap:Map', [a, b]))], element('__func__lhs', [nt('core:Pair', [a, b])]), [])),
+ fun('TreeMap.sv', 57, 9, [a, b], signature('silver:util:raw:treemap:update', [element('key', a), element('value', [b]), element('mp', foreigntype('silver:util:raw:treemap:Map', [a, b]))], element('__func__lhs', foreigntype('silver:util:raw:treemap:Map', [a, b])), []))]
+syntax []
+parsers []
+flow []

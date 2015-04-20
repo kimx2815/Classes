@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<!--
+Variables used:
+  PKG_NAME
+  LANG_NAME
+  SOURCE_EXT
+-->
+<plugin>
+	<extension point="org.eclipse.imp.runtime.languageDescription">
+	  <language extensions="cx" description="nothing here" natureID="EDU_IDE.imp.nature" language="EDU">
+	  </language>
+	</extension>
+	<extension id="EDU_IDE.parserWrapper" name="EDU Parser Wrapper" point="org.eclipse.imp.runtime.parser">
+	  <parserWrapper class="edu.umn.cs.melt.ableC.artifacts.ide_basic.imp.controller.EDUParseController" language="EDU">
+	  </parserWrapper>
+	</extension>
+	<extension id="EDU.imp.builder" name="EDU builder" point="org.eclipse.core.resources.builders">
+	  <builder hasNature="true">
+	    <run class="edu.umn.cs.melt.ableC.artifacts.ide_basic.imp.builders.EDUBuilder">
+	      <parameter name="foo" value="bar">
+	      </parameter>
+	    </run>
+	  </builder>
+	</extension>
+	<extension id="imp.nature" name="EDU Nature" point="org.eclipse.core.resources.natures">
+	  <builder id="EDU_IDE.EDU.imp.builder"></builder>
+	  <runtime>
+	     <run class="edu.umn.cs.melt.ableC.artifacts.ide_basic.imp.builders.EDUNature"></run>
+	  </runtime>
+	</extension>
+	<extension id="EDU.imp.builder.problem" name="EDU Error" point="org.eclipse.core.resources.markers">
+	   <super type="org.eclipse.core.resources.problemmarker"></super>
+	   <persistent value="true"></persistent>
+	</extension>
+	<extension id="EDU.imp.builder.problem" name="EDU Error" point="org.eclipse.core.resources.markers">
+	   <super type="org.eclipse.core.resources.problemmarker"></super>
+	   <persistent value="true"></persistent>
+	</extension>
+	<extension point="org.eclipse.ui.popupMenus">
+		<objectContribution objectClass="org.eclipse.core.resources.IProject" adaptable="true" nameFilter="*" id="EDU.imp.projectContextMenu">
+			<action
+			      label="Enable EDU Builder"
+			      tooltip="Enable the EDU builder for this project"
+			      class="edu.umn.cs.melt.ableC.artifacts.ide_basic.imp.actions.EnableEDUNature"
+			      id="EDU.imp.actions.enableNatureAction">
+			</action>
+		</objectContribution>
+	</extension>
+	<extension point="org.eclipse.imp.runtime.tokenColorer">
+	   <tokenColorer class="edu.umn.cs.melt.ableC.artifacts.ide_basic.imp.coloring.Colorer" language="EDU">
+	   </tokenColorer>
+	</extension>
+	<extension
+	   id="EDU_IDE.wizards"
+	   name="EDU Project Wizards"
+	   point="org.eclipse.ui.newWizards">
+	   <wizard
+	      category="EDU_IDE.wizards.category/"
+	      class="edu.umn.cs.melt.ableC.artifacts.ide_basic.eclipse.wizard.NewProjectWizard"
+	      id="EDU_IDE.wizard.newProject"
+	      name="New EDU Project"
+	      finalPerspective="EDU_IDE.perspective"
+	      project="true">
+	   </wizard>
+	   <category
+	      id="EDU_IDE.wizards.category"
+	      name="EDU">
+	   </category>
+	</extension>
+	<extension
+	   point="org.eclipse.ui.startup">
+	   <startup
+	       class="edu.umn.cs.melt.ableC.artifacts.ide_basic.StartupHook">
+	   </startup>
+	</extension>
+	<extension
+	   point="org.eclipse.ui.perspectives">
+	   <perspective
+	      class="edu.umn.cs.melt.ableC.artifacts.ide_basic.eclipse.perspective.EDUPerspective"
+	      id="EDU_IDE.perspective"
+	      name="EDU">
+	   </perspective>
+	</extension>
+</plugin>

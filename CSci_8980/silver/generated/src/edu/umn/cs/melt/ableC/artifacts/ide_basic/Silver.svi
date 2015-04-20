@@ -1,0 +1,14 @@
+declaredName 'edu:umn:cs:melt:ableC:artifacts:ide_basic'
+grammarTime 1384237937
+grammarSource "../../../edu.umn.cs.melt.ableC/artifacts/ide_basic/"
+moduleNames ['edu:umn:cs:melt:ableC:drivers:parseOnly', 'silver:langutil', 'ide', 'edu:umn:cs:melt:ableC:concretesyntax', 'core']
+allDeps ['edu:umn:cs:melt:ableC:concretesyntax:gcc_exts', 'edu:umn:cs:melt:ableC:concretesyntax:c11', 'edu:umn:cs:melt:ableC:concretesyntax:cppTags', 'core', 'edu:umn:cs:melt:ableC:concretesyntax', 'ide', 'silver:langutil', 'edu:umn:cs:melt:ableC:drivers:parseOnly', 'edu:umn:cs:melt:ableC:artifacts:ide_basic']
+exportedGrammars []
+optionalGrammars []
+condBuild []
+defs [
+ fun('Main.sv', 13, 7, [], signature('edu:umn:cs:melt:ableC:artifacts:ide_basic:theParser', [element('stringToParse', string), element('filenameToReport', string)], element('__func__lhs', nt('core:ParseResult', [nt('edu:umn:cs:melt:ableC:concretesyntax:Root', [])])), [])),
+ fun('Main.sv', 17, 9, [], signature('edu:umn:cs:melt:ableC:artifacts:ide_basic:main', [element('args', [string]), element('io_in', foreigntype('core:IO', []))], element('__func__lhs', nt('core:IOVal', [int])), []))]
+syntax []
+parsers [parser('Main.sv', 13, 0,'edu:umn:cs:melt:ableC:artifacts:ide_basic','edu:umn:cs:melt:ableC:artifacts:ide_basic:theParser','edu:umn:cs:melt:ableC:concretesyntax:Root',['edu:umn:cs:melt:ableC:concretesyntax'])]
+flow []

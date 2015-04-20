@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/EDU_FEATURE_1.0.0.jar" id="EDU_FEATURE" version="1.0.0">
+      <category name="main_category"/>
+   </feature>
+   <category-def name="main_category" label="Main Category"/>
+</site>
