@@ -1,0 +1,19 @@
+// common message type
+typedef enum {
+  POST_REQ = 99,
+  POST_ACK,
+  READ_REQ,
+  READ_ACK,
+  CHOOSE_REQ,
+  CHOOSE_ACK,
+  REPLY_REQ,
+  REPLY_ACK,
+  NUMMSG
+} MSGTYPE;
+
+#define MIN_POST_REQ_LEN 2
+#define MIN_READ_REQ_LEN 5
+#define MIN_CHOOSE_REQ_LEN 5
+#define MIN_REPLY_REQ_LEN 7
+
+#define DISPLAY_ARTICLES_PER_PAGE 20
